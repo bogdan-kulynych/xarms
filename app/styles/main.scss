@@ -1,0 +1,339 @@
+// $iconSpritePath: "../images/glyphicons-halflings.png";
+// $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+@import 'sass-bootstrap/lib/bootstrap';
+@import 'compass/css3';
+
+/* Parameters */
+
+$font-family-base: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+$active-link-color: #3498db;
+$passive-link-color: #333333;
+
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+    font-family: $font-family-base;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-base;
+}
+
+a, a:hover, a:active, a:visited {
+    color: $active-link-color;
+}
+
+.caps {
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: rgba(#fff, 0.8);
+    border-bottom: none;
+
+    @include transition-property(all);
+    @include transition-duration(0.2s);
+    @include box-shadow(0 0 5px rgba(33, 33, 33, 0.5));
+
+    a {
+        color: $passive-link-color;
+        border-bottom: 2px solid transparent;
+
+        letter-spacing: 0.02em;
+
+        @include transition-property(color, border);
+        @include transition-duration(0.3s, 0.5s);
+    }
+
+    li a:hover, li a:active, .navbar-brand:hover {
+        color: $active-link-color;
+        background-color: transparent;
+    }
+
+    li a:focus, li a:visited, .navbar-brand {
+        outline: 0;
+        background-color: transparent;
+    }
+
+    li.active {
+        a {
+            color: $active-link-color;
+            border-bottom: 2px solid $active-link-color;
+        }
+        a:hover {
+            color: $passive-link-color;
+        }
+    }
+
+    a.navbar-brand {
+        margin-left: 0.5em;
+        span {
+            font-size: 0;
+        }
+        padding: 0;
+        width: 120px;
+        height: 52px;
+
+        background: url(/images/xarms.png) no-repeat center center;
+        background-size: 76px 16px;
+    }
+
+    li.social-icons {
+        margin-left: 2em;
+        a {
+            display: inline-block;
+            padding: 0;
+
+            @include transition-property(opacity);
+            @include transition-duration(0.1s);
+            @include opacity(0.5);
+        }
+        a:hover {
+            @include opacity(1);
+        }
+        i {
+            display: inline-block;
+            width: 35px;
+            height: 45px;
+            background-repeat: no-repeat;
+            background-position: center 12px;
+            background-size: 24px 24px;
+        }
+        i.icon-facebook {
+            background-image: url(/images/facebook.png);
+        }
+        i.icon-twitter {
+            background-image: url(/images/twitter.png);
+        }
+        i.icon-instagram {
+            background-image: url(/images/instagram.png);
+        }
+        i.icon-tripadvisor {
+            background-image: url(/images/tripadvisor.png);
+        }
+    }
+
+    .dummy {
+        display: none;
+    }
+}
+
+.navbar.initial {
+    background: transparent;
+    padding: 1em 0;
+    box-shadow: none;
+
+    .navbar-brand {
+        background-image: url(/images/xarms-white.png);
+    }
+
+    li a, .navbar-brand {
+        color: #fff;
+    }
+
+    li a:hover {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        background-color: transparent;
+    }
+
+    li.social-icons a:hover {
+        border-color: transparent;
+    }
+}
+
+/* Slides */
+
+.text {
+    display: table-cell;
+}
+
+.middle {
+    vertical-align: middle;
+}
+
+.top {
+    padding-top: 52px;
+    vertical-align: top;
+}
+
+.rect-box {
+    max-width: 30em;
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+.slide {
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 2em;
+
+    background: fixed;
+    background-size: cover;
+
+    font-size: 1.5em;
+}
+
+.intro {
+    background-image: url(/images/intro.jpg);
+
+    .rect-box {
+        color: #111;
+        padding: 2em;
+        background: rgba(#ccc, 0.3);
+        text-align: center;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            padding: 1em;
+            max-width: 40%;
+            min-width: 100px;
+        }
+    }
+}
+
+.read {
+    background-image: url(/images/read-mod.jpg);
+}
+
+.listen {
+    background-image: url(/images/listen.jpg);
+    .rect-box {
+        padding-top: 1em;
+        padding-right: 1em;
+        color: #eee;
+
+        @media (max-width: 1024px) {
+            color: #000;
+        }
+    }
+}
+
+.taste {
+    background-image: url(/images/taste.jpg);
+    color: #fff;
+
+    .top {
+        padding-top: 40px;
+    }
+}
+
+.feel {
+    background-image: url(/images/feel.jpg);
+    .text {
+        padding-left: 2em;
+        color: #fff;
+
+        @media (max-width: 1024px) {
+            color: #000;
+        }
+    }
+}
+
+.exchange {
+    background-image: url(/images/exchange.jpg);
+    color: #000;
+}
+
+.location {
+    background-image: url(/images/location.jpg);
+    color: #333;
+    font-size: 1em;
+    padding: 0;
+    height: 150%;
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 1em;
+    }
+
+    .map {
+        width: 100%;
+        height: 300px;
+        margin: 2em auto 0 auto;
+    }
+
+    .box {
+        background: rgba(#ccc, 0.3);
+        display: block;
+        padding: 2em 3em;
+
+        @media (max-width: 1024px) {
+            background: rgba(#ccc, 0.8);
+        }
+    }
+
+    .contacts {
+        color: #000;
+    }
+}
+
+/* Services */
+
+$jump: 20px;
+
+.services {
+    background: #fff;
+    padding: 50px 0;
+
+    a:hover {
+        text-decoration: none;
+
+        .service-icon {
+            margin-top: 0px;
+            margin-bottom: $jump;
+        }
+    }
+    p {
+        margin-top: 1em;
+        font-size: 1.5em;
+    }
+}
+
+img.service-icon {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    margin-top: $jump;
+
+    @include transition-property(all);
+    @include transition-duration(0.3s);
+}
+
+/* Call to Action */
+
+.social-buttons > * {
+    display: inline-block;
+}
+
+.call-to-action {
+    margin-top: 5em;
+    padding: 2em 0;
+}
+
+/* Footer */
+
+footer {
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.call-to-action, footer {
+    background: #fff;
+}
