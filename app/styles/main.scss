@@ -182,7 +182,7 @@ a, a:hover, a:active, a:visited {
     position: relative;
     padding: 2em;
 
-    background: fixed;
+    background-attachment: fixed;
     background-size: cover;
 
     font-size: 1.5em;
@@ -208,7 +208,7 @@ a, a:hover, a:active, a:visited {
 }
 
 .read {
-    background-image: url(/images/read-mod.jpg);
+    background-image: url(/images/read.jpg);
 }
 
 .listen {
