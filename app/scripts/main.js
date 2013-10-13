@@ -86,7 +86,7 @@
 
     // Parallax
     if ($.browser.mobile === true) {
-        $('slide').css({
+        $('.slide').css({
             'background-attachment': 'scroll'
         });
     } else {

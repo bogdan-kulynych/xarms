@@ -1,14 +1,19 @@
-// $iconSpritePath: "../images/glyphicons-halflings.png";
-// $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+/* Overrides */
+
+$font-family-base: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+$link-color: #3498db;
+$link-hover-color: #333333;
+$passive-link-color: $link-hover-color;
+
+/* Imports */
 
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'compass/css3';
-
-/* Parameters */
-
-$font-family-base: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-$active-link-color: #3498db;
-$passive-link-color: #333333;
 
 /* Global Styles */
 
@@ -16,18 +21,19 @@ html,
 body {
     height: 100%;
     width: 100%;
-
-    font-family: $font-family-base;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: $font-family-base;
 }
 
 a, a:hover, a:active, a:visited {
-    color: $active-link-color;
+    color: $link-color;
+}
+
+a {
+    border-bottom: 1px solid #B4D6ED;
+}
+
+a:hover {
+    border-bottom-color: $link-color;
+    text-decoration: none;
 }
 
 .caps {
@@ -48,7 +54,6 @@ a, a:hover, a:active, a:visited {
     a {
         color: $passive-link-color;
         border-bottom: 2px solid transparent;
-
         letter-spacing: 0.02em;
 
         @include transition-property(color, border);
@@ -56,7 +61,7 @@ a, a:hover, a:active, a:visited {
     }
 
     li a:hover, li a:active, .navbar-brand:hover {
-        color: $active-link-color;
+        color: $link-color;
         background-color: transparent;
     }
 
@@ -67,11 +72,11 @@ a, a:hover, a:active, a:visited {
 
     li.active {
         a {
-            color: $active-link-color;
-            border-bottom: 2px solid $active-link-color;
+            color: $link-color;
+            border-bottom-color: $link-color;
         }
         a:hover {
-            color: $passive-link-color;
+            color: $link-color;
         }
     }
 
@@ -89,7 +94,7 @@ a, a:hover, a:active, a:visited {
     }
 
     li.social-icons {
-        margin-left: 2em;
+        margin-left: 0.5em;
         a {
             display: inline-block;
             padding: 0;
@@ -104,7 +109,7 @@ a, a:hover, a:active, a:visited {
         i {
             display: inline-block;
             width: 35px;
-            height: 45px;
+            height: 44px;
             background-repeat: no-repeat;
             background-position: center 12px;
             background-size: 24px 24px;
@@ -125,6 +130,10 @@ a, a:hover, a:active, a:visited {
 
     .dummy {
         display: none;
+    }
+
+    button {
+        padding: 4px 9px;
     }
 }
 
@@ -149,6 +158,10 @@ a, a:hover, a:active, a:visited {
 
     li.social-icons a:hover {
         border-color: transparent;
+    }
+
+    button {
+        color: #fff;
     }
 }
 
@@ -190,17 +203,17 @@ a, a:hover, a:active, a:visited {
 
 .intro {
     background-image: url(/images/intro.jpg);
+    color: #111;
 
     .rect-box {
-        color: #111;
+        margin-top: 52px;
         padding: 2em;
         background: rgba(#ccc, 0.3);
         text-align: center;
 
         img {
             display: block;
-            margin: 0 auto;
-            padding: 1em;
+            margin: 0 auto 1em auto;
             max-width: 40%;
             min-width: 100px;
         }
@@ -235,19 +248,13 @@ a, a:hover, a:active, a:visited {
 
 .feel {
     background-image: url(/images/feel.jpg);
-    .text {
-        padding-left: 2em;
-        color: #fff;
+    color: #fff;
 
+    .text {
         @media (max-width: 1024px) {
             color: #000;
         }
     }
-}
-
-.exchange {
-    background-image: url(/images/exchange.jpg);
-    color: #000;
 }
 
 .location {
@@ -282,6 +289,32 @@ a, a:hover, a:active, a:visited {
     .contacts {
         color: #000;
     }
+
+    hr {
+        border-color: #ccc;
+    }
+
+    /* Call to Action */
+
+    .call-to-action {
+        margin-top: 4em;
+        padding: 2em 0;
+
+        .social-buttons > * {
+            display: inline-block;
+        }
+    }
+
+    /* Footer */
+
+    footer {
+        padding-top: 1em;
+        padding-bottom: 2em;
+    }
+
+    .call-to-action, footer {
+        background: #fff;
+    }
 }
 
 /* Services */
@@ -314,26 +347,4 @@ img.service-icon {
 
     @include transition-property(all);
     @include transition-duration(0.3s);
-}
-
-/* Call to Action */
-
-.social-buttons > * {
-    display: inline-block;
-}
-
-.call-to-action {
-    margin-top: 5em;
-    padding: 2em 0;
-}
-
-/* Footer */
-
-footer {
-    padding-top: 1em;
-    padding-bottom: 2em;
-}
-
-.call-to-action, footer {
-    background: #fff;
 }

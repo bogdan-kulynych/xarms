@@ -3,21 +3,26 @@
 
 ## Розробка
 
+
 ### Вимоги
 
-Системні: `node.js git git-subtree ruby compass`
+Системні: `git node npm ruby compass`
 
-Вимоги node.js: `npm install -g yo`
+Yeoman: `npm install -g yo`
+
+Локальні пакети `node.js`: `npm install`
+
 
 ### Локальний сервер
 
-Запуск сервера на localhost:9000
+Запуск сервера на `localhost:9000`
 
     grunt server
 
+
 ### Запуск на Github pages
 
-Команди виконувати з кореневої папки:
+Використовується `git subtree`. Команди виконувати з кореневої папки:
 
     # Будуємо
     grunt build
@@ -27,6 +32,7 @@
 
     # Власне запуск
     git subtree push --prefix dist gh-pages
+
 
 ## Ліцензія
 
