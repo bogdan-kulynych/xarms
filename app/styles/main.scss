@@ -29,6 +29,9 @@ a, a:hover, a:active, a:visited {
 
 a {
     border-bottom: 1px solid #B4D6ED;
+
+    @include transition-property(border-color);
+    @include transition-duration(0.2s);
 }
 
 a:hover {
@@ -310,6 +313,27 @@ a:hover {
     footer {
         padding-top: 1em;
         padding-bottom: 2em;
+
+        .github a {
+            border-bottom: none;
+            i.icon-github {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                background: url(/images/github.png);
+                background-size: 24px 24px;
+                opacity: 0.2;
+
+                @include transition-property(opacity);
+                @include transition-duration(0.2s);
+            }
+        }
+
+        .github a:hover{
+            i.icon-github {
+                opacity: 0.6;
+            }
+        }
     }
 
     .call-to-action, footer {
