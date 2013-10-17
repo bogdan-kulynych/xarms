@@ -51,8 +51,8 @@
         var myLatlng = new google.maps.LatLng(50.454319,30.521057),
             title = 'Книжкова крамниця «Хармс»',
             address = 'вул. Михайлівська 21-б, Київ',
-            telephone1 = '+38 (050) 380 55 55',
-            telephone2 = '+38 (068) 380 66 66';
+            telephone1 = '+38 (068) 308 88 93',
+            telephone2 = '+38 (093) 847 47 45';
 
         var myOptions = {
             zoom: 16,
