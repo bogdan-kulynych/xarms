@@ -6,8 +6,9 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 $font-family-base: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 $font-size-base: 16px;
 $line-height-base: 1.5;
-$link-color: #3498db;
-$link-hover-color: #333333;
+$link-color: #c0392b;
+$link-hover-color: #333;
+$link-underline-color: #ddd;
 $passive-link-color: $link-hover-color;
 
 /* Imports */
@@ -28,7 +29,7 @@ a, a:hover, a:active, a:visited {
 }
 
 a {
-    border-bottom: 1px solid #B4D6ED;
+    border-bottom: 1px solid $link-underline-color;
 
     @include transition-property(border-color);
     @include transition-duration(0.2s);
@@ -150,7 +151,7 @@ a:hover {
     }
 
     li a, .navbar-brand {
-        color: #fff;
+        color: #000;
     }
 
     li a:hover {
@@ -176,6 +177,10 @@ a:hover {
 
 .middle {
     vertical-align: middle;
+}
+
+.bottom {
+    margin-top: 5em;
 }
 
 .top {
@@ -211,7 +216,7 @@ a:hover {
     .rect-box {
         margin-top: 52px;
         padding: 2em;
-        background: rgba(#ccc, 0.3);
+        background: rgba(#fff, 0.7);
         text-align: center;
 
         img {
@@ -225,19 +230,15 @@ a:hover {
 
 .read {
     background-image: url(/images/read.jpg);
+    color: #fff;
+    .rect-box {
+        padding-left: 2em;
+    }
 }
 
 .listen {
     background-image: url(/images/listen.jpg);
-    .rect-box {
-        padding-top: 1em;
-        padding-right: 1em;
-        color: #eee;
-
-        @media (max-width: 1024px) {
-            color: #000;
-        }
-    }
+    color: #eee;
 }
 
 .taste {
@@ -251,13 +252,7 @@ a:hover {
 
 .feel {
     background-image: url(/images/feel.jpg);
-    color: #fff;
-
-    .text {
-        @media (max-width: 1024px) {
-            color: #000;
-        }
-    }
+    color: #eee;
 }
 
 .location {
@@ -280,7 +275,7 @@ a:hover {
     }
 
     .box {
-        background: rgba(#ccc, 0.3);
+        background: rgba(#fff, 0.7);
         display: block;
         padding: 2em 3em;
 
